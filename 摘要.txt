@@ -1,0 +1,277 @@
+*eclipse使用注意
+ 1.取消一些验证，不然很卡。右击项目属性-Builders-取消JavaScript Validator勾选、勾选Validation-Enable project specific setting 
+ 2.添加Tomcat启动包含的项目：右击Tomcat-Add and Remove进行添加
+ 3.选中要查找文件的文件名字符串，ctrl+shift+R就可以调出其资源列表。
+ 4.ctrl+H全局搜索
+
+*相关地址
+平台地址http://www.mytotalworld.com/
+移动端前台地址:http://m.mytotalworld.com/seller/toPage?url=/h5/front/index
+字体库地址:http://www.iconfont.cn/plus/manage/index?manage_type=myprojects&projectId=182679&keyword=
+字体图标库地址http://www.iconfont.cn/plus/manage/index?manage_type=myprojects&spm=a313x.7781069.1998910419.10.BsWEjR&projectId=182679
+用新浪微博登陆，845257580@qq.com   142536xiaoxiao
+总代管家系统http://192.168.1.233:81/    账户密码：admin@jmzdgj jmzdgj123456
+禅道bug管理http://192.168.1.93/zentao/user-login-L3plbnRhby9wcm9qZWN0LXRhc2stMS5odG1s.html  账号wy_123  wy123456      地址变更为http://192.168.1.177/zentao/
+我的账号http://192.168.1.93/zentao/        账号密码chennanyang  123456    
+网站发布服务器47.89.192.156      sgmtw#@!|*&.abc987365
+网站发布服务器上的目录
+sns项目       /tomcat7/webapps/ROOT
+买家项目  /tomcat7/webapps/ROOT
+卖家项目  /data/tomcat7_seller/webapps
+数据库SNS      120.24.218.223:25432  postgres  123456789 
+      mtwshop  192.168.1.233:13308    mtwshop   123456
+无线网络 SGCompany   SG@tech123
+线上admin项目密码lilingjie123
+Jackson账号是可以发布物流的
+-------------------------------------
+idingjia项目  https://git.xlet.org/    1783683148@qq.com  abc12345678
+总代系统：http://zd.idingjia.com       admin@demo /admin123456
+门店系统：http://md.idingjia.com/     admin@100187   /mdo281
+-------------------------------------
+支付宝接口开放平台账号mytotalworld@mytotalworld.com  密码Mtw123456
+
+雷鸣电商5.0
+前台 http://bbc.leimingtech.com
+买家：15123456789   123456
+卖家 http://bbc.leimingtech.com/seller
+卖家：18813035210    123456
+管理后台:http://bbc.leimingtech.com/admin
+admin  123456
+
+
+        
+
+
+
+
+*项目启动相关：
+ 1.各个项目属性设置里要取消js验证、启动项目制定的setting。
+ 2.总的平台是mtwsns-snss项目，需要哪些项目要在Tomcat里添加，如果不添加则由总平台连接过去的具体项目的页面会报错。
+ 3.seller项目数据库配置在springmvc-servlet-seller.xml、起始页面等在web.xml
+
+后端freemarker的模板引擎  前端art-template模板引擎
+
+
+
+
+
+*Eclipse-SVN使用：
+ 资源同步：执行此操作后，会得到本地和线上代码的对比，蓝色代表线上多出来的(可下载的)，灰色代表本地多出来的(可提交的)，红色代表冲突的
+ 什么时候更新：是蓝色的，说明这部分代码没有冲突，是可更新的。
+ 提交：灰色情况下，本地的代码是线上代码没有的，是可提交的，直接提交即可
+       红色情况下，是有冲突的。如果两段代码冲突并且要保留本地的，则执行合并冲突后再执行提交；如果两端代码冲突并且要保留线上的，则右键文件覆盖更新，不用再提交。
+ 
+任务：
+1.熟悉PC、移动端开发流程及架构
+2.了解项目目录结构和一些命名规则
+3.了解页面css、js及其它资源结构。
+4.复习Css3弹性布局和iscroll.js
+
+
+
+*代码概略功能：
+ PC项目
+ index.js用于首页交互的初始化
+
+*项目目录了解
+ 商城相关项目 ？？对应访问地址，包括移动端和PC端
+ sgshop
+ sgshop-admin 总平台后台管理，只管理买家卖家管理，sns没有。 只能用admin账号登录  http://localhost:8080/sgshop-admin/Question/getUserQuestionList#
+
+ sgshop-api-provider
+ sgshop-core 
+ sgshop-front 移动端http://www.m.mytotalworld.com/seller/toPage?url=/h5/front/index  PC端http://www.mytotalworld.com/seller_mall/  本地用http://localhost:8080/sgshop-seller/
+ sgshop-h5 艳红说此项目暂时无用
+ sgshop-payment 估计是接口项目
+ sgshop-points 估计是接口项目
+ sgshop-seller 卖家中心(买家中心) 移动端  PC端url：http://www.mytotalworld.com/seller/   初进入是卖家，页签可切换到买家状态
+ sgshop-seller-api
+ sgshop-service
+ 未知项目
+ mtw_login 所有账号都可以登录 对应url：http://www.mytotalworld.com/mtw_login/login?flag=mtw&locale=zh_CN&service=http%3A%2F%2Fwww.mytotalworld.com%2Fsgmtw%2FHome%2FHome
+ mtw_mobile
+ mtw_ui
+ mtwshop
+ mtwshop-api-provider
+ mtwsns
+ mtwsns-snss 是sns就是mtw平台下的交友、旅游、烹饪....链接所在的项目
+ mytotalworld 
+ seller项目里web项目里的目录
+ html5
+ jasperreportTemplate
+ m
+ res  PC端样式js图片
+ res_bak
+ res_h5 手机端样式资源  res_h5/public公用   其余私用
+ res_sg PC端样式资源  res_sg/public公用  其余私用
+ res1
+ sellergoods
+ sellergoodsios
+ upload
+
+*移动端都在seller/h5里，所有功能都有汇集。调用地址类似http://www.m.mytotalworld.com/seller/toPage?url=/h5/sns/index   移动端调用总地址未http://www.m.mytotalworld.com/
+
+？字体图标库使用。！下载图标库后要将iconfont.css里的.icon-开头的样式覆盖掉移动端项目里的public的basic.css的.icon-开头的样式
+？公共的js、css。！jspublic.js是公共工具函数和获取数据函数；js_comm_temp.js定义了各个项目主域url字符串以便调用；
+？all_answered_questions.ftl里面的<#assign ConsultGoodsTag = newTag("consultInfoTag")/>  的newTag是真哪里定义
+？字体图标库的使用过程
+？freemaker用法.html里${switch?string.number}好像不是freemaker语法、${item_index}是自带的吗
+？在complaint_management.ftl文件里的<@spring.message "user.name" /> 、<@p.homepHead/>是外部引入ftl模板p里的homepHead方法，但是在哪里定义和引入？
+？带着写一个移动端和PC端list页面各一个、找增删改页面各一个
+？单点登录，调试SG.tagSend里请求的url
+？一个页面的一些公共用法：
+ 1.加载动画
+ 2.
+？移动端页面数据API规则和数据格式规定
+？列举form、list的增删改查的示例页面
+
+*手机端登录页面http://localhost:8080/sgshop-seller/toPage?url=/h5/userCenter/login
+
+
+
+FileGee
+
+*PC端页面url http://localhost:8080/sgshop-front/all/coupon    中all/coupon 是移动的Ajax请求的API
+
+*parent.layer.msg是PC端的弹窗调用
+
+*SG.send里的url是相对地址
+
+*平台首页下的链接地址
+     我http://www.mytotalworld.com/sgmtw/Home/Home
+     在线购物http://www.mytotalworld.com/seller_mall/
+     聊天http://www.mytotalworld.com/sgmtw/AccountBinding/Default
+     群组http://www.mytotalworld.com/sgmtw/GroupList
+     视频http://www.mytotalworld.com/sgmtw/Video
+     朋友http://www.mytotalworld.com/sgmtw/ProjectTeam/FollowingsList
+     家庭http://www.mytotalworld.com/sgmtw/GroupHome/Find?categoryId=62
+     学习http://www.mytotalworld.com/sgmtw/GroupHome/Religion?f=study
+     宗教http://www.mytotalworld.com/sgmtw/GroupHome/Religion?f=religion
+     省钱http://www.mytotalworld.com/sgmtw/GroupHome/Religion?f=savemoney
+     运动http://www.mytotalworld.com/sgmtw/GroupHome/Religion?f=sports
+     旅游http://www.mytotalworld.com/sgmtw/GroupHome/Religion?f=travel
+     烹饪http://www.mytotalworld.com/sgmtw/GroupHome/Religion?f=cooking
+
+ 
+
+*移动端和PC端的jspublic.js内容不一样。
+*移动端jspublic.js里函数说明：
+ SG对象的函数：
+ showLanguage切换语言
+ setLanguage设置语言
+ ？pop_language_win
+ ？mtw_login ---登录
+ ？mtwsns----sns
+ ？sgshop---商城
+ ？mtw_login？
+ ？mtw_logout
+ getBase_SmallImg得到小图链接
+ loadHtml相当于$.get()
+ tagSend移动端提供的类似PC端获取数据的方法，当PC是用newTag方式获取数据。如：<#assign storeVo =storeInfoTag("{'storeId':'${storeId}'}")>
+ send获取数据的API，有做单点登录判断，默认下type="post"、async=true、dataType="json"、jsonp=""、async=true、data={}。？？调用时iscroll配置参数是什么意思。
+ sendText发送大文本数据(编辑器内容)
+ urlParam获取url参数
+ SGUI对象的函数：
+ confirm
+ defineConConfirm自定义弹窗
+ alert
+ prompt瞬时提示框 相当于我的tipDialog
+ popwindow自定义弹窗
+ loadshow和loadhide加载动画弹出框
+ errorimg图片加载错误时？？
+ ？jq
+ money格式化字符串
+ getResult获取指定范围随机数
+ dateFn、DateandTimeFn、toLocaleString时间格式化
+ toHome_id根据用户id回到手机端个人主页，是SNS项目用到
+ toHome_name(uName,uid) 根据用户name、id回到手机端个人主页，其中id可控是SNS项目用到
+ jumpToImage利用安卓webview接口获取手机上传的图片
+ ？receiveData也是原生安卓调用，功能未知
+ getcurrencyIcon根据货币符号字典获取指定国家的货币符号
+ localstorage_set、localstorage_get设置本地存储
+ CurrCountPrice根据汇率计算价格
+ CurrCountPrice_detail根据汇率计算价格
+
+*sgshop-h5这个项目没有用到
+
+*所有的移动端项目都在sgshop-seller里的h5目录下、除了sns、userCenter、help是freemaker标签套的页面以外其他都是Ajax页面
+ 访问移动端项目的页面时url用参数区分http://m.mytotalworld.com/seller/toPage?url=/h5/sns 
+
+*所有原型文件在王雅给的文档《MTW APP Demo手机原型》、《新增内容的原型》里
+
+*手机端页面class现有命名规则：项目名+页面名+模块名，如f_index_banner 
+
+*页面头部、尾部等公共母版标签利用freemaker导入功能在WEB-INF/views/commons对应的ftl文件中定义。
+
+*spring国际化：做页面上使用<@spring.message "language.select"/>标签   标签的汉语和英语在项目src/main/resources/i18n/messages_zh_CN.properties和messages_en_US.properties下定义。   要定义其它国际化标签按照文件名规范添加形如messages_zh_CN.properties的文件并在里面定义key-value
+
+*页签切换控件，事件在jspublic.js里定义，布局样式可参考/h5/front/all_categories.ftl页面。
+
+*sns页面查找步骤(如http://www.mytotalworld.com/sgmtw/GroupHome/Preview?pgid=132&ptid=507页面)：
+ 1.mtwsns-snss/..WEB-INF/config.xml下找GroupHome的配置节点
+ 2.ctrl+单击GroupHome节点的class属性到对应的action
+ 3.action以executeCommandPreview形式命名。然后看里面返回的字符串地址。
+
+ executeCommandPreview
+
+*个人认为的一些问题：
+ 1.所有页面都使用Ajax其实没有必要，如果要套APP外壳那这些页面也要静态的html。建议部分页面的局部使用Ajax，而其它的直接可以用freemaker输出。
+ 2.可以将操作库JQ换成Zepto
+ 3.js文档没有注释
+
+
+*后面要安转node和jsdoc3工具来生成js的API文档。
+
+*问题汇总：
+ 移动端jspublic.js里下面代码有问题，应该是移动端用click会有延时。用其它方式替代
+  $(".js_goback").click(function() {
+		goBack();
+  });
+
+
+
+*工作步骤
+ 国际化  <@srping ""/>
+ 找PC页面，找数据接口
+ 了解业务流程，轮转
+ 对数据填充位置
+ 写代码
+ 
+
+*样式规范
+ 字体颜色 在basic.css里的 /*颜色*/ 部分
+ 背景颜色 在basic.css里的 /*背景*/ 部分
+
+*ftl页面如何通过freemaker标签变量判断是中英文环境<#if locale=="en_US"> <#else> </#if>
+
+
+mall.order_details.paymentmethod.blance=余额支付
+mall.order_details.paymentmethod.online=在线支付
+
+mall.order_details.payment_method.blance=blance
+mall.order_details.payment_method.online=online
+
+
+*sns个人背景图片设置页面的头部 /mtwsns-snss/src/main/webapp/themes/default/jsp/layout.jsp
+ 
+
+*获取checkbox选中状态，JQ用$('cb').prop('checked'); 原生js用cbObj.checked
+
+**admin项目布局调整
+1.原本mtw_basic.css 文件内容修改为新的内容
+2.sellerList1.ftl、sellerList2.ftl、sellerList3.ftl、mtw_list.ftl四个文件的css引用改为1步的css文件
+3.添加 class="w"样式 width: 100%;
+4.添加样式/*admin项目全屏布局修改*/
+5.注释掉/*滚动条样式*/
+6.再首页添加语言切换栏靠右js控制
+
+
+*查看端口被占用进程  netstat -ano | find "8080"
+
+
+*此项目规划缺陷总结：
+ 1.项目采用Ajax请求数据，但没有定制resfult接口，接口是后端Bll/Tag转化而来，造成单个页面数据有非常多接口，导致性能低。
+ 2.项目既然采用Ajax请求数据，但在基础的变量还使用后端标签，如${base}。这使得项目无法脱离后端freemaker环境进行打包原生App
+ 3.对于用户信息采用应该是后端session存储，没有在本地做存储，也使得项目无法脱离后端打包原生App。
+ 4.由于第3点，如果页面的请求需要携带用户信息参数到后台，是其它页面传递进来还是直接去后台请求用户信息，再进行请求。
+ 

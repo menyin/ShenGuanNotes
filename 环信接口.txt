@@ -1,0 +1,56 @@
+
+--------------Android-----------------------
+
+一、初始化登录
+   
+   方法： GetHuanXinInitLogin(String json)
+   参数格式： json格式 
+   参数详情: {"username":"xxxx"}
+   回调名：GetHuanXinInitLoginCallback
+
+二、发起对话界面
+	
+   方法：ToChatFragment(String json)
+   参数格式: json格式
+   参数详情 {"salername":"xxxx"}
+   回调名：ToChatFragmentCallback
+
+三、会话列表
+
+   方法:GetConversationList()
+   参数：无
+   回调名：GetConversationListCallback
+
+四、关于退出环信账号
+    
+   手机客户端WebActivity这个活动的ondestory()方法中进行处理。
+
+
+--------------Ios-----------------------
+
+一、初始化登录
+   
+   方法： GetHuanXinInitLogin(String json)
+   参数格式： json格式 
+   参数详情: {"username":"xxxx"}
+   回调名：GetHuanXinInitLoginCallback
+
+二、发起对话界面
+	
+   方法：ToChatFragment(String json)
+   参数格式: json格式
+   参数详情 {"salername":"xxxx"}
+   回调名：ToChatFragmentCallback
+
+三、会话列表
+
+   方法:GetConversationList()
+   参数：无
+   回调名：GetConversationListCallback
+
+
+通过网站账号获取到环信账号密码接口。
+http://192.168.1.105:8080/sgshop-front/getHxMemberByName?memberName=
+http://m.mytotalworld.com/seller_mall/getHxMemberByName?memberName=
+
+*在web通知原生时，

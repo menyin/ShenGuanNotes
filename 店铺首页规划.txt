@@ -1,0 +1,26 @@
+﻿表名：custom_store_theme
+id编号(主键)  storeId店铺编号(唯一约束)   storeImg店铺首页图片(相对地址)  storeHotArea店铺热区JSON  updateTime更新时间  creaTetime创建时间  state状态  memberId修改人员
+
+
+storeHotArea店铺热区JSON格式形如：
+[
+{"ref":"1","name":"热卖商品1","href":"http://www.baidu.com","coords":"103,134,383,187","shape":"rect"},
+{"ref":"2","name":"热卖商品1","href":"http://www.youku.com","coords":"203,134,383,187","shape":"rect"},
+{"ref":"3","name":"热卖商品1","href":"http://www.tudou.com","coords":"303,134,383,187","shape":"rect"},
+{"ref":"4","name":"热卖商品1","href":"http://www.tianya.com","coords":"403,134,383,187","shape":"rect"}
+]
+注：ref热区索引   name热区名  href热区链接(绝对地址)  coords热区坐标   shape热区形状类型
+
+
+增加和修改时
+       请求request参数：{storeId:"111111"  storeImg:"upload/111.jpg"  storeHotArea:"json数组"  memberId:"mmmmm1111"}   
+       返回数据{result:"true|false",msg:"提示信息"}
+
+查询时 
+       请求request参数： storeId    
+       返回数据表记录的json  
+
+
+
+
+

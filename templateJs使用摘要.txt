@@ -1,0 +1,6 @@
+*3种使用方式：
+ 方式一：定义<script id="mytemp" type="text/html">模板,然后通过template('mytmep',oData)得到渲染字符串
+ 方式二：定义sSource=‘html字符串模板代码’，然后用过var fRender=template.render(sSource);再用fRender(oData)得到渲染字符串
+ 方式三：此方式是方式一的重载，fRender=template('mytemp'); 然后用fRender(oData);
+
+
